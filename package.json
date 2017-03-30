@@ -1,0 +1,26 @@
+{
+  "name": "gucci-bot",
+  "version": "1.0.0",
+  "description": "A Slack bot with Gucci features!",
+  "main": "gucci.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/obsidianspork/gucci-bot.git"
+  },
+  "keywords": [
+    "gucci",
+    "slackbot",
+    "slack",
+    "js",
+    "express"
+  ],
+  "author": "David Coy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/obsidianspork/gucci-bot/issues"
+  },
+  "homepage": "https://github.com/obsidianspork/gucci-bot#readme"
+}
