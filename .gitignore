@@ -12,7 +12,7 @@ pids
 lib-cov
 
 # Directory for WebStorm
-.idea/
+.idea/**
 
 # Coverage directory used by tools like istanbul
 coverage
