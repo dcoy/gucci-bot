@@ -18,9 +18,14 @@
     "express"
   ],
   "author": "David Coy",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/obsidianspork/gucci-bot/issues"
   },
-  "homepage": "https://github.com/obsidianspork/gucci-bot#readme"
+  "homepage": "https://github.com/obsidianspork/gucci-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
 }
