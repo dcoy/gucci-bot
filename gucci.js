@@ -1,8 +1,10 @@
-var express = require('express');
-var bodyParser = require('body-parser');
+'use strict';
+
+const express = require('express');
+const bodyParser = require('body-parser');
 
 // Random quotes!
-var quotes = [
+let quotes = [
    {
      "author": "Gucci Mane",
       "quote":"If a man does not have the sauce, then he is lost. But the same man can be lost in the sauce."
@@ -45,25 +47,43 @@ var quotes = [
    }
 ];
 
-var app = express();
-var port = process.env.PORT || 1337;
+// var app, but with a gucci touch
+var gucci = express();
+var port = gucci.listen(process.env.PORT || 5000);
 
 // body parser middleware
-app.use(bodyParser.urlencoded({extended: true }));
+gucci.use(bodyParser.urlencoded({extended: true }));
 
 // Get all quotes
-app.get('/', function(req, res) {
+gucci.get('/', function(req, res) {
   res.json(quotes);
 });
 
 // Random Quote
-app.get('/random/quote', function(req, res) {
-  var id = Math.floor(Math.random() * quotes.length);
-  var q = quotes[id];
+gucci.get('/random/quote', function(req, res) {
+  let id = Math.floor(Math.random() * quotes.length);
+  let q = quotes[id];
   res.json(q);
 });
 
-app.listen(port, function() {
+
+gucci.post('/gucci', function(req, res, next) {
+  let userName = req.body.user_name;
+  let id = Math.floor(Math.random() * quotes.length);
+  let q = quotes[id];
+  let botPayLoad = {
+    text: q.quote + "\n- " + q.author + " :gucci:"
+  };
+
+  // loop otherwise
+  if (userName !== 'slackbot') {
+    return res.status(200).json(botPayLoad);
+  } else {
+    return res.status(200).end();
+  }
+});
+
+gucci.listen(port, function() {
   console.log('Time to gucci-fy: listening on port ' + port + '.');
 });
 
